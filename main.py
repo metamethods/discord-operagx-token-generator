@@ -142,6 +142,7 @@ def request_token(proxy: str):
 
     if proxy in exceptions:
       print(magenta(f"Proxy: {proxy} was exceptioned"))
+      return
 
     if retries.get(proxy, 0) >= MAX_RETRIES:
       print(magenta(f"Proxy: {proxy} has reached the max retries of {MAX_RETRIES}. Removing"))
